@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RecursiveFibonacci {
+public class RecursivePower {
 
 	static int pow(int x,int y) {
 		int result = 1 ; 
