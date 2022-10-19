@@ -6,6 +6,7 @@ public class Employee {
 	int hireYear;
 	int newSalary=0;
 	int currentYear = 2021;
+	boolean flag = true;
 	
 	Employee(String name, double salary, int workHours, int hireYear){
 		this.name = name ;
@@ -23,21 +24,26 @@ public class Employee {
 			 }
 		 }
 		 
+		 public boolean validYear() {
+			 if(this.hireYear > this.currentYear || this.hireYear <1970 ) {
+				 return flag = false;
+			 }else {
+				return flag;
+			 }
+		}
+		 
 		public void raiseSalary() {
-			if(this.hireYear > this.currentYear || this.hireYear <1970 ) {
-				System.out.println("Please enter the valid hiring year !!");
-			}else {
 			 if((this.currentYear - this.hireYear) < 10 ) {
 				 System.out.println("Salary Raise -> " + this.salary * 0.05);
 				 this.newSalary += this.salary * 0.05;
 			 }else if ((this.currentYear - this.hireYear) >= 20) {
 				 System.out.println("Salary Raise -> " + this.salary * 0.15);
 				 this.newSalary += this.salary * 0.15;
-			 }else if ((this.currentYear - this.salary) > 9 && (this.currentYear - this.salary) < 20 ) {
+			 }else if ((this.currentYear - this.hireYear) > 9 && (this.currentYear - this.hireYear) < 20 ) {
 				System.out.println("Salary Raise -> " + this.salary * 0.10);
 				this.newSalary += this.salary * 0.10; 
 			 }
-		 }}
+		 }
 		
 		public void tax(){
 			if(this.salary <= 1000) {
@@ -49,14 +55,20 @@ public class Employee {
 			}
 			 
 		public void run() {
-			 System.out.println("Employee name -> " + this.name);
-			 System.out.println("Salary -> " + this.salary);
-			 System.out.println("Working hours -> " + this.workHours);
-			 System.out.println("Hiring Year -> " + this.hireYear);
-			 bonus();
-			 raiseSalary();
-			 tax();
-			 System.out.println("Total Salary -> " + ( this.salary));
+			if(validYear()) {
+				 System.out.println("Employee name -> " + this.name);
+				 System.out.println("Salary -> " + this.salary);
+				 System.out.println("Working hours -> " + this.workHours);
+				 System.out.println("Hiring Year -> " + this.hireYear);
+				 bonus();
+				 raiseSalary();
+				 tax();
+				 System.out.println("Total Salary -> " + ( this.salary));
+			}else {
+
+				 System.out.println("Please enter the valid hiring year !!");
+			}
+			 
 		 }
 		
 	}
