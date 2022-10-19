@@ -1,12 +1,13 @@
 
 public class Employee {
 	String name;
-	int salary;
+	double salary;
 	int workHours;
 	int hireYear;
 	int newSalary=0;
+	int currentYear = 2021;
 	
-	Employee(String name, int salary, int workHours, int hireYear){
+	Employee(String name, double salary, int workHours, int hireYear){
 		this.name = name ;
 		this.salary = salary;
 		this.workHours = workHours;
@@ -23,17 +24,20 @@ public class Employee {
 		 }
 		 
 		public void raiseSalary() {
-			 if((2021 - this.hireYear) < 10 ) {
+			if(this.hireYear > this.currentYear || this.hireYear <1970 ) {
+				System.out.println("Please enter the valid hiring year !!");
+			}else {
+			 if((this.currentYear - this.hireYear) < 10 ) {
 				 System.out.println("Salary Raise -> " + this.salary * 0.05);
 				 this.newSalary += this.salary * 0.05;
-			 }else if ((2021 - this.hireYear) >= 20) {
+			 }else if ((this.currentYear - this.hireYear) >= 20) {
 				 System.out.println("Salary Raise -> " + this.salary * 0.15);
 				 this.newSalary += this.salary * 0.15;
-			 }else if ((2021 - this.salary) > 9 && (2021 - this.salary) < 20 ) {
+			 }else if ((this.currentYear - this.salary) > 9 && (this.currentYear - this.salary) < 20 ) {
 				System.out.println("Salary Raise -> " + this.salary * 0.10);
 				this.newSalary += this.salary * 0.10; 
 			 }
-		 }
+		 }}
 		
 		public void tax(){
 			if(this.salary <= 1000) {
