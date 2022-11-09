@@ -3,11 +3,11 @@ import java.util.*;
 public class MinMax {
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
-		System.out.println("Number of numbers -> ");
+		System.out.print("Number of numbers -> ");
 		int min = 1 , max = 1;
 		int number1 = input.nextInt();
 		for (int i = 1 ;i<number1+1;i++) {
-			System.out.println("Enter the " + i + ". number -> ");
+			System.out.print("Enter the " + i + ". number -> ");
 			int number2 = input.nextInt();
 			if(i == 1 ) {
 				max = number2;
