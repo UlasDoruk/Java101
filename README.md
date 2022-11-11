@@ -4,6 +4,6 @@
 
 ### About Bus generator 
 
-- Dynamic Bus simulator. Which means, users can book a seat from bus dynamically. 
+- Dynamic Bus simulator. This means users can book a seat on a bus dynamically.
 
-- User also can cancel booked seat, print all passenger or avaible seats. 
+- Users also can cancel booked seats, and print all passenger or available seats.
